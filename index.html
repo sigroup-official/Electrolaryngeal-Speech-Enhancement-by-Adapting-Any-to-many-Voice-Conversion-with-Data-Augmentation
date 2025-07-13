@@ -149,12 +149,12 @@
 <body>
 <main>
     <header>
-        Electrolaryngeal Speech Enhancement by Adapting Any-to-many Voice Conversion with Data Augmentation
+        Electrolaryngeal Speech Enhancement by Adapting<br>Any-to-many Voice Conversion with Data Augmentation
     </header>
     <div class="authors">
         <span>Bowen Wu</span><sup>1,2</sup>,
         <span>Haruto Ueno</span><sup>1,3</sup>,
-        <span>Carlos T. Ishi</span><sup>1,2</sup>,
+        <span>Carlos Toshinori Ishi</span><sup>1,2</sup>,
         and <span>Chaoran Liu</span><sup>1,4</sup>
     </div>
     <div class="affiliations">
@@ -173,12 +173,12 @@
     <div class="image-block">
         <img src="assets/figures/overview.svg" alt="Method Overview">
         <div class="caption">
-            Overview of our method. During inference, the input to Whisper encoder is EL speech, the input to Speaker Encoder is normal (target) speech.
+            Overview of our method. Our model takes as input an EL speech and a normal speech, and outputs a speech whose linguistic content is the same as the EL speech but the voice is the same as the normal speech. This ability is learned from finetuning an existing VC model (QuickVC: QVC) on our augmented data. During inference, the input to Whisper encoder is EL speech, the input to Speaker Encoder is normal (target) speech.
         </div>
     </div>
     <section class="section">
         <h2 style="text-align: left;">Conversion from EL Speech to Normal Speech</h2>
-        <div class="explanation">Conversion from EL speech to normal speech (the voice of target speech)</div>
+        <div class="explanation">Conversion from EL speech to normal speech by converting its voice to the voice of the target speech. In the following table, the voice of the each source EL speech is converted to that of the target speech while preserving the linguistic content. Our finetuned model achieved better intonation and intelligibility compared to QVC baseline.</div>
         <div style="text-align:left; margin-bottom: 18px;">
             <h3 style="font-size: 1.05rem; font-weight: 600; margin: 0 0 8px 0; color: #555; text-align: left;">Target Speech</h3>
             <audio controls style="margin-left: 0;">
@@ -525,7 +525,7 @@
     </section>
     <section class="section">
         <h2>One-to-Many Voice Conversion of EL Speech</h2>
-        <div class="explanation">Conversion from EL speech to normal speech (the voice of each of the target speech) using our proposed model</div>
+        <div class="explanation">Conversion from EL speech to normal speech when inputting multiple speaker's voice to our proposed model. The converted speech samples have identical intonation but different voices, showing that our model learned to reconstruct the intonation from the EL speech.</div>
         <table>
             <thead>
                 <tr>
@@ -1086,4 +1086,3 @@
     </section>
 </main>
 </body>
-
